@@ -1,5 +1,5 @@
 from get_data import *
-from calculation import *
+from formula import *
 
 
 time_delta = 1
