@@ -1,4 +1,6 @@
 from get_data import *
+from calculation import *
+
 
 time_delta = 1
 df = hourly_price_historical("ETH", "USD", 2000, time_delta)
