@@ -5,7 +5,7 @@ import numpy as np
 import librosa as lb
 from get_data import hourly_price_historical
 
-df = hourly_price_historical("BTC","USD",2000,1)
+df = hourly_price_historical("BTC","USD",2000,1,"h")
 closeValue = []
 for i in range(len(df)):
         closeValue.append([df["close"][i]])
