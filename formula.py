@@ -37,7 +37,7 @@ def moyenneMobile(df, period):
                 sum += df.close[i - k]
 
             mm.append(sum / period)
-    sleep(1)
+    sleep(0.5)
     return mm
 
 
@@ -46,5 +46,5 @@ def MoyenneMobileExp(df, period):
     for i in tqdm(range(1, len(df))):
         mme = listMME[-1] + (2 / (period + 1)) * (df["close"][i] - listMME[-1])
         listMME.append(mme)
-    sleep(1)
+    sleep(0.5)
     return listMME
