@@ -18,9 +18,27 @@ def stochastic(df):
             lowest_close = 0
 
         last_close = df["close"][i]
-        k = 100 * ((last_close - lowest_close) / (highest_close - lowest_close))
+        k = 100 * ((last_close - lowest_close) /
+                   (highest_close - lowest_close))
         stocha.append(k)
     return stocha
+
+
+def moyenneMobileSimple(listVal, period):
+    mm = []
+    for i in range(len(listVal)):
+
+        if i <= period:
+            mm.append(listVal[i])
+
+        else:
+            sum = 0
+
+            for k in range(period):
+                sum += listVal[i - k]
+
+            mm.append(sum / period)
+    return mm
 
 
 def moyenneMobile(df, period):
