@@ -2,7 +2,7 @@ from tqdm import tqdm
 from time import sleep
 
 
-def stochastic(df):
+def stochastic_indicator(df):
     stocha = []
     for i in tqdm(range(len(df))):
 
@@ -24,7 +24,7 @@ def stochastic(df):
     return stocha
 
 
-def moyenneMobileSimple(listVal, period):
+def moving_average_list(listVal, period):
     mm = []
     for i in range(len(listVal)):
 
@@ -41,7 +41,7 @@ def moyenneMobileSimple(listVal, period):
     return mm
 
 
-def moyenneMobile(df, period):
+def moving_average_df(df, period):
     mm = []
     for i in tqdm(range(len(df))):
 
@@ -59,7 +59,7 @@ def moyenneMobile(df, period):
     return mm
 
 
-def MoyenneMobileExp(df, period):
+def exponential_moving_average(df, period):
     listMME = [df["close"][0]]
     for i in tqdm(range(1, len(df))):
         mme = listMME[-1] + (2 / (period + 1)) * (df["close"][i] - listMME[-1])

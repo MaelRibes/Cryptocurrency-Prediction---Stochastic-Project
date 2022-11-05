@@ -3,11 +3,11 @@ import datetime
 import pandas as pd
 
 
-def hourly_price_historical(symbol, comparison_symbol, limit, aggregate, hourly, exchange=''):
-    if hourly == "h":
+def get_historical_prices(symbol, comparison_symbol, limit, aggregate, time_freq, exchange=''):
+    if time_freq == "h":
         url = 'https://min-api.cryptocompare.com/data/v2/histohour?fsym={}&tsym={}&limit={}&aggregate={}' \
             .format(symbol.upper(), comparison_symbol.upper(), limit, aggregate)
-    if hourly == "d":
+    if time_freq == "d":
         url = 'https://min-api.cryptocompare.com/data/v2/histoday?fsym={}&tsym={}&limit={}&aggregate={}' \
             .format(symbol.upper(), comparison_symbol.upper(), limit, aggregate)
 
